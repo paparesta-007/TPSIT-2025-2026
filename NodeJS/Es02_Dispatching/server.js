@@ -44,6 +44,22 @@ const server = http.createServer(function(req, res) {
             res.end ();  
         });
      }
+     else if(risorsa=="/api/risorsa1") {
+        res.writeHead(200, headers.json);
+        // in corrispondenza del 200 occorre serializzare
+        res.write(JSON.stringify({"benvenuto":param.nome + " " + param.cognome}));
+        res.end();
+     }
+     else if(risorsa=="/api/risorsa2") {
+        res.writeHead(200, headers.json);
+        res.write(JSON.stringify({"benvenuto":"pluto"}));
+        res.end();
+     }
+     else {
+        res.writeHead(404, headers.html);
+        res.write("<h1>Risorsa non trovata</h1></br>");
+        res.end();
+     }
 
 });
 

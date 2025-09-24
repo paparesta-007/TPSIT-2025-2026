@@ -13,7 +13,7 @@ btnInvia1.addEventListener("click", async function() {
 
 
 btnInvia2.addEventListener("click", async function() {
-    let response = await inviaRichiesta("POST", "/api/risorsa2",{nome:"Michele",cognome:"Rossi"})
+    let response = await inviaRichiesta("POST", "/api/risorsa2",{nome:"pluto"})
     console.log(response);
     if(response.status==200){
         alert(JSON.stringify(response.data));
