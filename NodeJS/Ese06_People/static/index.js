@@ -47,7 +47,9 @@ async function getPeopleByCountry(country){
     let response = await inviaRichiesta("GET", "/api/getPeopleByCountry?country=" + country);
     if (response.status === 200) {
         peopleList = response.data;
+        document.querySelector("#dropdownMenuButton").textContent = country
         createTable(response.data);
+        divDettagli.style.display="none"
     } else {
         alert(response.status + ": " + response.err);
     }
@@ -94,7 +96,7 @@ function createTable(people){
         btnElimina.classList.add("btn","btn-danger")
         btnElimina.textContent="Elimina"
         btnElimina.addEventListener("click", function(){
-            deletePerson(person)
+            deletePerson(person.name)
         })
         td=document.createElement("td")
         td.appendChild(btnElimina)
@@ -110,8 +112,10 @@ async function showDetails(index){
 
     cardIndex = index;
     const person=peopleList[cardIndex]
+    const name=person.name
+    console.log(name)
     let response = await inviaRichiesta("GET", 
-        "/api/getPerson?person=" + encodeURIComponent(JSON.stringify(person)));
+        "/api/getPerson" , name);
     if (response.status === 200) {
         const person=response.data
         divDettagli.style.display="block"
@@ -147,6 +151,15 @@ async function showDetails(index){
         alert(response.status + ": " + response.err);
     }
    
+}
+async function deletePerson(name){
+    if(confirm("Sei sicuro di voler eliminare " + name.title + " " + name.first + " " + name.last + "?")){
+        let response=await inviaRichiesta("DELETE", "/api/deletePerson", name)
+        if(response.status===200){
+            getPeopleByCountry(document.querySelector("#dropdownMenuButton").textContent)
+            divDettagli.style.display="none"
+        }
+    }
 }
 btnFirst.addEventListener("click", function(){
     

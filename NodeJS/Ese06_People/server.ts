@@ -100,17 +100,13 @@ app.get("/api/getPeopleByCountry", function (req: express.Request, res: express.
 });
 
 app.get("/api/getPerson",function (req: express.Request, res: express.Response){
-    const personStr = req.query.person as string;
-    const person = JSON.parse(decodeURIComponent(personStr));
-    if(!person){
-        res.status(404);
-        res.send("Errore persona");
-        return;
-    }
+    // const title = req.query.title;
+    // const first = req.query.first;
+    // const last = req.query.last;
+    const name=req.query
+    
     const findPerson = people.results.find(p =>
-        p.name.title === person.name.title &&
-        p.name.first === person.name.first &&
-        p.name.last === person.name.last
+        JSON.stringify(p.name) === JSON.stringify(name)
     );
 
 
@@ -121,6 +117,30 @@ app.get("/api/getPerson",function (req: express.Request, res: express.Response){
         res.status(404);
         res.send("Persona non trovata nella lista");
     }
+})
+
+app.delete("/api/deletePerson", function (req: express.Request, res: express.Response) {
+    const name =req.body
+    let index=people.results.findIndex(p=>JSON.stringify(p.name)===JSON.stringify(name))
+    if(index>-1){
+        people.results.splice(index,1)
+        
+        fs.writeFile("./people.json", JSON.stringify(people), function(err) {
+            if (!err) {
+                res.send({
+                    message: "Persona eliminata con successo",});
+            } else {
+                res.status(500).send({
+                    message: "Errore nell'eliminazione della persona",
+                    error: err,
+                });
+            }
+        });
+    } else {
+        res.status(404).send("Persona non trovata nella lista");
+    }
+
+    
 })
 // F) default root 
 app.use("/", function (req: express.Request, res: express.Response) {
