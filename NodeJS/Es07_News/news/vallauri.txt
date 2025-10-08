@@ -1,0 +1,1 @@
+[{"titolo":"Attentato a Charlie Hebdo","visualizzazioni":1197,"file":"charlie.txt"},{"titolo":"Crollo della borsa","visualizzazioni":239,"file":"borsa.txt"},{"titolo":"Il vallauri finalista a zero robotics","visualizzazioni":864,"file":"vallauri.txt"},{"titolo":"La juventus campione d'inverno","visualizzazioni":198,"file":"juventus.txt"}]
