@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 async function getNewsList() {
+
     const newsDiv = document.getElementById("wrapper")
+    newsDiv.innerHTML = ""
     let response = await inviaRichiesta("GET", "/api/elenco")
     if (response.status === 200) {
 
@@ -58,6 +60,7 @@ async function incrementViews(file){
     let response =await inviaRichiesta("POST", "/api/incrementViews", {file:file})
     if(response.status===200 ){
         console.log("visualizzazioni incrementate")
+        getNewsList()
     }
     else{
         alert("Errore incremento visualizzazioni")

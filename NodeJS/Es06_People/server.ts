@@ -124,24 +124,40 @@ app.delete("/api/deletePerson", function (req: express.Request, res: express.Res
     let index=people.results.findIndex(p=>JSON.stringify(p.name)===JSON.stringify(name))
     if(index>-1){
         people.results.splice(index,1)
-        
-        fs.writeFile("./people.json", JSON.stringify(people), function(err) {
-            if (!err) {
-                res.send({
-                    message: "Persona eliminata con successo",});
-            } else {
-                res.status(500).send({
-                    message: "Errore nell'eliminazione della persona",
-                    error: err,
-                });
-            }
-        });
+        saveFile(res)
+       
     } else {
         res.status(404).send("Persona non trovata nella lista");
     }
 
     
 })
+
+app.post("/api/addPerson", function (req: express.Request, res: express.Response) {
+    let person=req.body
+    if(!person){
+        res.status(400).send("Persona non trovata nella lista");
+    }
+    else{
+        people.results.push(person)
+        saveFile(res)
+    }
+    
+})
+
+function saveFile(res: express.Response) {
+    fs.writeFile("./people.json", JSON.stringify(people), function(err) {
+        if (!err) {
+            res.send({
+                message: "Persona eliminata con successo",});
+        } else {
+            res.status(500).send({
+                message: "Errore nell'eliminazione della persona",
+                error: err,
+            });
+        }
+    });
+}
 // F) default root 
 app.use("/", function (req: express.Request, res: express.Response) {
     res.status(404);

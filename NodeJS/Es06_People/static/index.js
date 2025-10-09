@@ -15,9 +15,11 @@ const btnPrev=document.querySelectorAll("#divDettagli a")[1]
 const btnNext=document.querySelectorAll("#divDettagli a")[2]
 const btnLast=document.querySelectorAll("#divDettagli a")[3]
 let cardIndex=0
-btnAdd.addEventListener("click", function(){
-	window.location.href = "./inserisci.html"
-})
+if(document.querySelector("#btnAdd")){
+        btnAdd.addEventListener("click", function(){
+        window.location.href = "./inserisci.html"
+    })
+}
 const allPeople=[]
 divDettagli.style.display="none"
 getCountries()
@@ -122,7 +124,9 @@ async function showDetails(index){
 
 
         let img=document.querySelector("#divDettagli img")
-        img.src=person.picture.large
+        if(person.picture.medium){
+            img.src=person.picture.medium
+        }
 
         let h5=document.querySelector("#divDettagli h5")
         h5.textContent=person.name.first + " " + person.name.last
@@ -132,16 +136,16 @@ async function showDetails(index){
 
         let gender=document.createElement("p")
         gender.innerHTML=`<b>Gender:</b> ${person.gender}`
-
+        
         let address=document.createElement("p")
-        let stringAddress=`<b>Address:</b> ${person.location.street.number} ${person.location.street.name}, ${person.location.city}, ${person.location.state}, ${person.location.country}`
+        let stringAddress=`<b>Address:</b> ${person.location.city}, ${person.location.state}, ${person.location.country}`
         address.innerHTML=stringAddress
 
         let email=document.createElement("p")
         email.innerHTML=`<b>Email:</b> ${person.email}`
 
         let date=document.createElement("p")
-        date.innerHTML=`<b>Date of Birth:</b> ${person.dob.date.split("T")[0]}`
+        date.innerHTML=`<b>Date of Birth:</b> ${JSON.stringify(person.dob)}`
         pCardText.appendChild(email)
 
         pCardText.appendChild(gender)

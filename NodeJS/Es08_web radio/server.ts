@@ -5,9 +5,7 @@ import http from "http";
 import url from "url";
 import fs from "fs";
 import express from "express";
-import news from "./news.json"
-import { readFile } from "node:fs";
-import * as path from "node:path";
+
 // B) configurazione server
 const port: number = 1337;
 let paginaErr: string = "";
@@ -62,52 +60,7 @@ app.use("/", function (req: express.Request, res: express.Response, next: expres
 
 
 // E) gestione root dinamiche
-app.get("/api/elenco", function (req: express.Request, res: express.Response, next: express.NextFunction) {
-    if (!req.query) {
-        res.status(400);
-        res.send("Parametri mancanti");
-    }
-    else {
-        res.send(news);
-    }
-})
 
-app.post("/api/getDetails", function (req: express.Request, res: express.Response) {
-    const file = req.body.file; // es: "borsa.txt"
-
-
-    fs.readFile("./news/" + file, { encoding: 'utf8' }, (err, data) => {
-        if (err) {
-            console.error("Errore lettura file:", err);
-            res.status(500).send({ error: "Errore lettura file" });
-
-        }
-        else {
-
-            res.status(200);
-            res.send({ file: data })
-        }
-    });
-});
-
-app.post("/api/incrementViews", function (req: express.Request, res: express.Response) {
-    const file = req.body.file; // es: "borsa.txt"
-    if (news) {
-        const newsItem = news.find((n) => n.file == file);
-        if (newsItem) {
-            newsItem.visualizzazioni++;
-            res.status(200);
-            res.send({ message: "Visualizzazioni aggiornate con successo" });
-            fs.writeFile("./news.json", JSON.stringify(news), (err) => {
-                if (err) {
-                    console.error("Errore scrittura file:", err);
-                    res.status(500).send({ error: "Errore scrittura file" });
-                }
-            });
-        }
-    }
-
-})
 
 // F) default root 
 app.use("/", function (req: express.Request, res: express.Response) {
