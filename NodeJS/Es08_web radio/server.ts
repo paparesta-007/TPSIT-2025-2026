@@ -5,9 +5,11 @@ import http from "http";
 import url from "url";
 import fs from "fs";
 import express from "express";
+import states from "./states.json"
+import radios from "./radios.json"
 
 // B) configurazione server
-const port: number = 1337;
+const port: number = 3000;
 let paginaErr: string = "";
 const app: express.Express = express();
 //app sarebbe funzione di callback per la creazione del server
@@ -60,7 +62,51 @@ app.use("/", function (req: express.Request, res: express.Response, next: expres
 
 
 // E) gestione root dinamiche
+app.get("/api/elenco", function (req: express.Request, res: express.Response) {
+    res.status(200)
+    res.send(states)
+})
 
+app.get("/api/getRadios", function (req: express.Request, res: express.Response) {
+    let name = req.query.name
+    if (!name) {
+        res.status(404)
+        res.send({ message: "Errore caricamento radios" })
+    }
+    if (name == "tutti") {
+        res.status(200)
+        res.send(radios)
+    } else {
+        let radiosFilter = radios.filter(r => r.state == name)
+        res.status(200)
+        res.send(radiosFilter)
+    }
+
+})
+
+app.patch("/api/like", function (req: express.Request, res: express.Response) {
+    let id = req.body.id
+    let radio = radios.find(r => r.id == id)
+    if (!radio) {
+        return res.send({ error: "Radio non trovata" }).status(404)
+    }
+    else {
+        const radio = radios.find((n) => n.id == id);
+        if (radio) {
+            radio.votes = (parseInt(radio.votes) + 1).toString();
+            fs.writeFile("./radios.json", JSON.stringify(radios, null, 2), (err) => {
+                if (err) {
+                    console.error("Errore scrittura file:", err);
+                    res.status(500).send({ error: "Errore scrittura file" });
+                }
+            });
+            res.status(200)
+            res.send({ message: "Like aggiunto correttamente" })
+        }
+    }
+
+
+})
 
 // F) default root 
 app.use("/", function (req: express.Request, res: express.Response) {
