@@ -93,26 +93,59 @@ app.get("/api/facts", function (req: express.Request, res: express.Response) {
 
 app.post("/api/rate", function (req: express.Request, res: express.Response) {
     let ids = req.body.ids
-    const fatti = facts.facts
+    let fatti = facts
     for (const id of ids) {
-        const fact = fatti.find(f => f.id == id)
+        const fact = fatti.facts.find((f: { id: any }) => f.id == id)
         if (fact) {
-            fact.score++
+            fact.score = fact.score + 1
         }
 
     }
-    if (facts) {
-        fs.writeFile("./facts.json", JSON.stringify(facts, null, 2), (err) => {
+    if (fatti) {
+        fs.writeFile("./facts.json", JSON.stringify(fatti, null, 2), (err) => {
             if (err) {
                 console.error("Errore scrittura file:", err);
                 res.status(500).send({ error: "Errore scrittura file" });
             }
         });
         res.status(200)
-        res.send({ message: "Like aggiunto correttamente" })
+        res.send({ message: "Score aggiunto correttamente" })
     }
 
 })
+
+app.post("/api/add", function (req: express.Request, res: express.Response) {
+    let categoria = req.body.categoria
+    let value = req.body.value
+    const base64Chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+    let id = "";
+    for (let i = 0; i < 22; i++) {
+        const randomIndex = Math.floor(Math.random() * base64Chars.length);
+        id += base64Chars[randomIndex];
+    }
+    let fact: any = {
+        categories: [categoria],  // <-- array
+        value: value,
+        created_at: new Date().toISOString(),
+        icon_url: icon_url,
+        url: api_url,
+        id: id,
+        score: 0
+    }
+     facts.facts.push(fact)
+    if (facts) {
+            fs.writeFile("./facts.json", JSON.stringify(facts, null, 2), (err) => {
+                if (err) {
+                    console.error("Errore scrittura file:", err);
+                    res.status(500).send({ error: "Errore scrittura file" });
+                }
+            });
+            res.status(200)
+            res.send({ message: "Score aggiunto correttamente" })
+        }
+   
+})
+
 // F) default root 
 app.use("/", function (req: express.Request, res: express.Response) {
     res.status(404);

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainWrapper = document.getElementById("mainWrapper")
     const div = document.createElement("div")
     const btnInvia = document.getElementById("btnInvia")
+    const btnAdd = document.getElementById("btnAdd")
     const chk = []
     mainWrapper.appendChild(div)
     getCategories()
@@ -62,18 +63,44 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(chk)
     }
 
-    btnInvia.addEventListener("click", async () => {
+    btnInvia.addEventListener("click", async function () {
         const selezionati = chk.filter(input => input.checked).map(i => i.value)
         let response = await inviaRichiesta("POST", "/api/rate", { ids: selezionati })
         if (response.status == 200) {
             const select = document.querySelector("select")
             const categoria = select.options[select.selectedIndex].value
-            getFacts(categoria)
+            window.location.href="/"
 
         }
         else {
             console.error(response.status + ": " + response.err)
         }
+    })
+
+    btnAdd.addEventListener("click",async function () {
+        const select = document.querySelector("select");
+        const selectedOption = select.options[select.selectedIndex];
+        const categoria = selectedOption ? selectedOption.value : "";
+        const newFact = document.getElementById("newFact");
+        if (!newFact.value.trim() || !categoria) {
+            alert("Selezionare categoria o aggiungere testo")
+        }
+        else {
+            console.log(categoria,newFact.value)
+            let response =await inviaRichiesta("POST", "/api/add", {
+                categoria: categoria,
+                value: newFact.value
+            })
+            if(response.status==200){
+                console.log("Fatto aggiunto correttamente")
+                getFacts(categoria)
+                newFact.value=""
+            }
+            else{
+
+            }
+        }
+
     })
 })
 
