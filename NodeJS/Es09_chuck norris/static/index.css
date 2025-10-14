@@ -1,0 +1,72 @@
+body{
+	width:1200px;
+	margin:0 auto;
+}
+h1{
+	font-size:36pt;
+	margin:10px;
+}
+h2{
+	padding:6px;
+	margin:0;
+}
+
+#categoryList{
+	width:130px;
+	height:360px;
+	margin:15px 10px;
+	padding:5px;
+	background-color:#ffa;
+	font-size:12pt;
+	font-style:italic;
+	font-weight:bold;
+	border-radius:10px;
+	border:1px solid blue;
+	text-align:center;
+	float:left;
+}
+#categoryList select{
+	margin-top:15px;
+	padding:10px;
+}
+
+/* ************************ */
+
+#mainWrapper{
+	width:540px;
+	margin:15px 10px;
+	padding:12px;
+	background-color:#ddd;
+	border-radius:10px;
+	border:1px solid blue;
+	float:left;
+}
+
+#mainWrapper checkbox{
+	padding:10px;
+}
+
+button{
+	margin:6px;
+	padding:6px 20px;
+	border-radius:5px;
+}
+
+/* ************************ */
+
+#detailsWrapper{
+	width:370px;
+	height:360px;
+	margin:15px 10px;
+	padding:20px;
+	background-color:#ddd;
+	border-radius:10px;
+	border:1px solid blue;
+	overflow:auto;
+	float:left;
+}
+
+#detailsWrapper textarea {
+	margin-top:15px;
+	margin-left:6px
+}
