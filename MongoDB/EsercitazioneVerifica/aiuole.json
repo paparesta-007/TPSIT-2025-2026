@@ -1,0 +1,254 @@
+[
+  {
+    "nomeAiuola": "Aiuola Centrale-1",
+    "colturaPrincipale": "Basilico",
+    "superficie": 6.0,
+    "umiditaOttimale": 55,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["acari"],
+    "sensorePrincipale": { "modello": "SoilSense X1", "batteria_percent": 70 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-01", "umidita": 55, "acquaUtilizzata": 7 },
+      { "data": "2025-03-02", "umidita": 54, "acquaUtilizzata": 8 },
+      { "data": "2025-03-03", "umidita": 56, "acquaUtilizzata": 9 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Centrale-2",
+    "colturaPrincipale": "Lattuga",
+    "superficie": 8.0,
+    "umiditaOttimale": 60,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["lumache"],
+    "sensorePrincipale": { "modello": "MiniProbe S4", "batteria_percent": 68 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-04", "umidita": 59, "acquaUtilizzata": 5 },
+      { "data": "2025-03-05", "umidita": 60, "acquaUtilizzata": 6 },
+      { "data": "2025-03-06", "umidita": 61, "acquaUtilizzata": 5 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Centrale-3",
+    "colturaPrincipale": "Peperoni",
+    "superficie": 9.0,
+    "umiditaOttimale": 48,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["acari"],
+    "sensorePrincipale": { "modello": "SoilSense X1", "batteria_percent": 77 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-10", "umidita": 49, "acquaUtilizzata": 10 },
+      { "data": "2025-03-11", "umidita": 48, "acquaUtilizzata": 9 },
+      { "data": "2025-03-12", "umidita": 47, "acquaUtilizzata": 11 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Centrale-4",
+    "colturaPrincipale": "Basilico",
+    "superficie": 6.0,
+    "umiditaOttimale": 55,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["acari"],
+    "sensorePrincipale": { "modello": "SoilSense X1", "batteria_percent": 81 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-10", "umidita": 55, "acquaUtilizzata": 7 },
+      { "data": "2025-03-11", "umidita": 54, "acquaUtilizzata": 8 },
+      { "data": "2025-03-12", "umidita": 56, "acquaUtilizzata": 9 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Est-1",
+    "colturaPrincipale": "Basilico",
+    "superficie": 6.5,
+    "umiditaOttimale": 55,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["acari", "afidi"],
+    "sensorePrincipale": { "modello": "SoilSense X1", "batteria_percent": 72 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-05", "umidita": 54, "acquaUtilizzata": 8 },
+      { "data": "2025-03-06", "umidita": 55, "acquaUtilizzata": 9 },
+      { "data": "2025-03-07", "umidita": 56, "acquaUtilizzata": 7 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Est-2",
+    "colturaPrincipale": "Pomodori",
+    "superficie": 11.0,
+    "umiditaOttimale": 40,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["mosca bianca"],
+    "sensorePrincipale": { "modello": "MiniProbe S4", "batteria_percent": 69 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-02", "umidita": 41, "acquaUtilizzata": 12 },
+      { "data": "2025-03-03", "umidita": 40, "acquaUtilizzata": 11 },
+      { "data": "2025-03-04", "umidita": 39, "acquaUtilizzata": 13 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Est-3",
+    "colturaPrincipale": "Zucchine",
+    "superficie": 15.0,
+    "umiditaOttimale": 38,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["lumache"],
+    "sensorePrincipale": { "modello": "MiniProbe S4", "batteria_percent": 61 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-07", "umidita": 38, "acquaUtilizzata": 14 },
+      { "data": "2025-03-08", "umidita": 37, "acquaUtilizzata": 13 },
+      { "data": "2025-03-09", "umidita": 39, "acquaUtilizzata": 15 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Est-4",
+    "colturaPrincipale": "Lattuga",
+    "superficie": 7.5,
+    "umiditaOttimale": 60,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["lumache", "acari"],
+    "sensorePrincipale": { "modello": "GreenProbe M1", "batteria_percent": 71 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-11", "umidita": 60, "acquaUtilizzata": 6 },
+      { "data": "2025-03-12", "umidita": 59, "acquaUtilizzata": 7 },
+      { "data": "2025-03-13", "umidita": 61, "acquaUtilizzata": 6 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Nord-1",
+    "colturaPrincipale": "Pomodori",
+    "superficie": 12.5,
+    "umiditaOttimale": 40,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["afidi", "lumache"],
+    "sensorePrincipale": { "modello": "SoilSense X1", "batteria_percent": 78 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-10", "umidita": 41, "acquaUtilizzata": 15 },
+      { "data": "2025-03-11", "umidita": 40, "acquaUtilizzata": 14 },
+      { "data": "2025-03-12", "umidita": 39, "acquaUtilizzata": 13 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Nord-2",
+    "colturaPrincipale": "Lattuga",
+    "superficie": 8.0,
+    "umiditaOttimale": 60,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["acari"],
+    "sensorePrincipale": { "modello": "GreenProbe M1", "batteria_percent": 65 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-08", "umidita": 59, "acquaUtilizzata": 5 },
+      { "data": "2025-03-09", "umidita": 60, "acquaUtilizzata": 6 },
+      { "data": "2025-03-10", "umidita": 61, "acquaUtilizzata": 5 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Nord-3",
+    "colturaPrincipale": "Sedano",
+    "superficie": 9.0,
+    "umiditaOttimale": 48,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["afidi"],
+    "sensorePrincipale": { "modello": "GreenProbe M1", "batteria_percent": 74 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-18", "umidita": 48, "acquaUtilizzata": 9 },
+      { "data": "2025-03-19", "umidita": 49, "acquaUtilizzata": 10 },
+      { "data": "2025-03-20", "umidita": 47, "acquaUtilizzata": 8 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Ovest-1",
+    "colturaPrincipale": "Peperoni",
+    "superficie": 9.0,
+    "umiditaOttimale": 48,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["afidi"],
+    "sensorePrincipale": { "modello": "SoilSense X2", "batteria_percent": 84 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-09", "umidita": 48, "acquaUtilizzata": 10 },
+      { "data": "2025-03-10", "umidita": 49, "acquaUtilizzata": 11 },
+      { "data": "2025-03-11", "umidita": 47, "acquaUtilizzata": 9 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Ovest-2",
+    "colturaPrincipale": "Zucchine",
+    "superficie": 14.0,
+    "umiditaOttimale": 38,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["lumache"],
+    "sensorePrincipale": { "modello": "GreenProbe M1", "batteria_percent": 62 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-06", "umidita": 38, "acquaUtilizzata": 14 },
+      { "data": "2025-03-07", "umidita": 37, "acquaUtilizzata": 13 },
+      { "data": "2025-03-08", "umidita": 39, "acquaUtilizzata": 15 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Ovest-3",
+    "colturaPrincipale": "Pomodori",
+    "superficie": 10.5,
+    "umiditaOttimale": 45,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["mosca bianca"],
+    "sensorePrincipale": { "modello": "SoilSense X2", "batteria_percent": 81 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-18", "umidita": 46, "acquaUtilizzata": 12 },
+      { "data": "2025-03-19", "umidita": 45, "acquaUtilizzata": 11 },
+      { "data": "2025-03-20", "umidita": 44, "acquaUtilizzata": 13 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Sud-1",
+    "colturaPrincipale": "Zucchine",
+    "superficie": 16.0,
+    "umiditaOttimale": 38,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["mosca bianca"],
+    "sensorePrincipale": { "modello": "SoilSense X2", "batteria_percent": 81 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-11", "umidita": 37, "acquaUtilizzata": 15 },
+      { "data": "2025-03-12", "umidita": 38, "acquaUtilizzata": 14 },
+      { "data": "2025-03-13", "umidita": 39, "acquaUtilizzata": 16 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Sud-2",
+    "colturaPrincipale": "Lattuga",
+    "superficie": 7.2,
+    "umiditaOttimale": 55,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["acari", "lumache"],
+    "sensorePrincipale": { "modello": "MiniProbe S4", "batteria_percent": 59 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-14", "umidita": 55, "acquaUtilizzata": 6 },
+      { "data": "2025-03-15", "umidita": 54, "acquaUtilizzata": 7 },
+      { "data": "2025-03-16", "umidita": 56, "acquaUtilizzata": 6 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Sud-3",
+    "colturaPrincipale": "Pomodori",
+    "superficie": 12.5,
+    "umiditaOttimale": 40,
+    "irrigazioneAutomatica": true,
+    "parassitiRilevati": ["mosca bianca", "zecche"],
+    "sensorePrincipale": { "modello": "SoilSense X2", "batteria_percent": 82 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-11", "umidita": 41, "acquaUtilizzata": 13 },
+      { "data": "2025-03-12", "umidita": 40, "acquaUtilizzata": 12 },
+      { "data": "2025-03-13", "umidita": 39, "acquaUtilizzata": 14 }
+    ]
+  },
+  {
+    "nomeAiuola": "Aiuola Sud-4",
+    "colturaPrincipale": "Zucchine",
+    "superficie": 14.0,
+    "umiditaOttimale": 38,
+    "irrigazioneAutomatica": false,
+    "parassitiRilevati": ["afidi"],
+    "sensorePrincipale": { "modello": "MiniProbe S4", "batteria_percent": 66 },
+    "rilevazioniGiornaliere": [
+      { "data": "2025-03-14", "umidita": 39, "acquaUtilizzata": 15 },
+      { "data": "2025-03-15", "umidita": 38, "acquaUtilizzata": 14 },
+      { "data": "2025-03-16", "umidita": 37, "acquaUtilizzata": 13 }
+    ]
+  }
+]
