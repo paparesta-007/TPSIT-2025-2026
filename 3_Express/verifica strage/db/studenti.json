@@ -1,0 +1,8 @@
+[
+	{"id":"ba5a", "user":"pippo", "pwd":"pippo", "voto":0},
+	{"id":"ba5b", "user":"pluto", "pwd":"pluto", "voto":0},
+	{"id":"ba5c", "user":"minnie","pwd":"minnie","voto":0},
+	{"id":"ba5d", "user":"conny", "pwd":"conny", "voto":0},
+	{"id":"ba5e", "user":"sally", "pwd":"sally", "voto":0},
+	{"id":"ba5f", "user":"sonny", "pwd":"sonny", "voto":0}
+]

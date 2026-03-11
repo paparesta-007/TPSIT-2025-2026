@@ -1,0 +1,9 @@
+#txtPrompt, #btnInvia {
+	padding:5px;
+}
+
+#display{
+	border:1px solid #ddd;
+	min-height: 100px;
+	padding:12px;
+}

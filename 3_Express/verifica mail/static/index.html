@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vallauri Mail</title>
+    <link rel="icon" href="img/icoVallauri.png" type="image/png" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="libreria.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+	<!-- LOGIN SECTION -->	
+	<div class="container" id="login" >
+	  <!-- Titolo -->
+      <div class="row">
+        <div class="col-sm-2"> </div>
+        <div class="col-sm-8 text-center" style="padding-top:20px; padding-bottom:210px;">
+            <img src="img/vallauri.jpg" class="img-fluid">
+        </div>
+		<div class="col-sm-2"> </div>
+      </div>
+
+	  <div class="row">   
+		<div class="col-md-3 col-sm-2"></div>
+		<div class="col-md-6 col-sm-8">			
+			<form id="frmLogin">
+				<!-- user -->			 
+				<div class="form-group input-group">
+					<span class="input-group-text">
+						<i class="fas fa-user"> </i>
+					</span>
+					<input type="text" class="form-control" id="usr" placeholder="Username">
+				</div>
+				
+				<!-- password -->
+				<div class="form-group input-group">
+					<span class="input-group-text">
+						<i class="fas fa-lock"> </i>
+					</span>
+					<input type="password" class="form-control" id="pwd" placeholder="Pwd">
+				</div>
+				
+				<!-- messaggio di errore -->
+				<div class="alert alert-danger alert-dismissible" id="lblErrore">	
+					<button type="button" class="close" >&times;</button>
+					<strong>Attenzione!</strong> Username o Password non validi. Rirpovare
+				</div>
+								
+			    <!-- invia -->
+			    <div class="form-group">
+				    <button type="button" class="btn btn-secondary btn-block" id="btnLogin">	
+				       LOGIN
+				    </button>	
+			    </div>					
+			</form>
+		</div>	
+		<!-- fine col-sm-4 -->
+		<div class="col-md-3 col-sm-3"></div>
+	  </div>	
+	</div>
+
+
+	<!-- MAIL SECTION -->	
+    <div class="container" id="mail">
+        <!-- Titolo -->
+        <div class="row align-items-center">
+            <div class="col-sm-2"> </div>
+            <div class="col-sm-8 text-center" style="padding-top:20px; padding-bottom:25px;">
+                <img src="img/vallauri.jpg" class="img-fluid">
+            </div>
+			<div class="col-sm-2"> </div>
+        </div>
+
+        <!--send mail-->
+        <form class="form-inline" id="frmInvia">
+            <div class="row" style="width:100%">
+                <!-- TO -->
+                <div class="col-md-2 col-sm-12">
+                    <label for="txtTo" style="justify-content:left">TO:</label>
+                    <input type="text" class="form-control" id="txtTo" placeholder="Enter Recipient">
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <label for="txtSubject" style="justify-content:left">Subject:</label>
+                    <input type="text" class="form-control" id="txtSubject" placeholder="Enter Subject">
+                </div>
+                <div class="col-md-5 col-sm-12">
+                    <label for="txtMessage" style="justify-content:left">Message:</label>
+                    <input type="text" class="form-control" id="txtMessage" placeholder="Enter message">
+                </div>
+                <div class="col-md-2 col-sm-12">
+                    <label for="txtAttachment" style="justify-content:left">Attachment:</label>
+                    <input type="file" class="form-control" id="txtAttachment">
+                </div>
+                <div class="col-md-1 col-sm-12">
+                    <label>&nbsp;</label>
+                    <button type="button" class="btn btn-secondary" id="btnInvia">Invia</button>
+                </div>
+            </div>
+        </form>
+
+        <!-- elenco mail-->
+        <table class="table table-hover" id="tabMail">
+            <thead>
+                <tr>
+                    <th width="16%">From</th>
+                    <th width="16%">Subject</th>
+                    <th width="50%">Body</th>
+                    <th width="18%">Attachment</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
